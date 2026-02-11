@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holey Moley Surfers Paradise 雙語介紹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            /* 背景維持原本的活潑配色 */
+            background: linear-gradient(135deg, #FF6B6B 0%, #556270 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2b2e4a 0%, #e84545 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .bilingual-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #e84545;
+        }
+
+        .bilingual-section h2 {
+            color: #e84545;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 2px solid #e84545;
+            padding-bottom: 10px;
+        }
+
+        .bilingual-text {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .english-text {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #2b2e4a;
+            color: #333; /* 確保文字為深色 */
+        }
+
+        .chinese-text {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #e84545;
+            color: #333; /* 確保文字為深色 */
+        }
+
+        /* Highlight Box 特別樣式修正 */
+        .highlight-box {
+            background: linear-gradient(135deg, #e84545 0%, #2b2e4a 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(232, 69, 69, 0.3);
+        }
+
+        .highlight-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: #fff;
+        }
+        
+        /* 強制 Highlight Box 內的白色文字區塊文字為黑色，避免融入背景 */
+        .highlight-box .english-text, 
+        .highlight-box .chinese-text {
+            color: #333 !important; 
+        }
+
+        .highlight-box .english-text p, 
+        .highlight-box .chinese-text p,
+        .highlight-box .english-text ul li, 
+        .highlight-box .chinese-text ul li {
+            color: #333 !important;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #e84545;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            background: #2b2e4a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .bilingual-text {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Holey Moley Golf Club</h1>
+        <div class="subtitle">Surfers Paradise 迷你高爾夫與娛樂中心</div>
+    </div>
+
+    <div class="content">
+
+        <!-- About Section -->
+        <div class="bilingual-section">
+            <h2>About Holey Moley | 關於我們</h2>
+            <div class="bilingual-text">
+                <div class="english-text">
+                    <p>Holey Moley Golf Club is the Gold Coast's craziest and most unique mini golf venue, located in the heart of Surfers Paradise at Circle on Cavill.</p>
+                    <p>More than just a mini golf course, it combines a cocktail bar, karaoke, and pop-culture art installations, turning the traditional putt-putt game into a vibrant nightlife experience.</p>
+                </div>
+                <div class="chinese-text">
+                    <p>Holey Moley Golf Club 是黃金海岸最瘋狂、獨特的迷你高爾夫體驗場所，坐落於衝浪者天堂（Surfers Paradise）的中心地帶 Circle on Cavill。</p>
+                    <p>這不僅僅是一個迷你高爾夫球場，它結合了雞尾酒酒吧、卡拉OK和流行文化藝術裝置，將傳統的推桿遊戲變成了充滿活力的夜生活體驗。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Section -->
+        <div class="bilingual-section">
+            <h2>Why Choose Holey Moley? | 為什麼選擇這裡？</h2>
+            
+            <div class="bilingual-text">
+                <div class="english-text">
+                    <ul>
+                        <li><strong>Pop Culture Themes:</strong> 18 creative holes themed around classic movies, cartoons, and nostalgic toys.</li>
+                        <li><strong>The Caddyshack Bar:</strong> Serving creative signature cocktails and food, enjoy a buzz while you putt.</li>
+                        <li><strong>Private Karaoke:</strong> Exclusive rooms for you and your friends to sing your hearts out undisturbed.</li>
+                        <li><strong>Perfect Location:</strong> Located in the Cavill Avenue precinct, connected with Strike Bowling for one-stop entertainment.</li>
+                    </ul>
+                </div>
+                <div class="chinese-text">
+                    <ul>
+                        <li><strong>流行文化主題：</strong> 18個以經典電影、卡通和懷舊玩具為主題的創意球洞。</li>
+                        <li><strong>The Caddyshack Bar（球童酒吧）：</strong> 提供創意特調雞尾酒與美食，邊打球邊享受微醺樂趣。</li>
+                        <li><strong>Private Karaoke（私人卡拉OK）：</strong> 專屬包廂讓您與朋友盡情歡唱，不受干擾。</li>
+                        <li><strong>絕佳位置：</strong> 位於 Cavill Avenue 商圈，結合 Strike Bowling 保齡球館，一站式娛樂。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Must-Try Rides/Holes -->
+        <div class="bilingual-section">
+            <h2>Must-Try Holes | 必玩球洞與體驗</h2>
+
+            <!-- Hole 1 (Highlight Box) -->
+            <div class="highlight-box">
+                <h3>727 Evergreen Terrace (Simpsons Theme)</h3>
+                <div class="bilingual-text">
+                    <div class="english-text">
+                        <p>One of Holey Moley's most iconic holes! You can sit on the life-sized classic couch and recreate the opening scene from "The Simpsons", making it an unmissable photo opportunity.</p>
+                        <ul>
+                            <li>Fully recreated cartoon living room scene</li>
+                            <li>Features the classic pink walls and couch</li>
+                        </ul>
+                    </div>
+                    <div class="chinese-text">
+                        <p>這是 Holey Moley 最具標誌性的球洞之一！您可以坐在真人大小的經典沙發上，重現《辛普森家庭》的片頭場景，是絕對不能錯過的拍照打卡點。</p>
+                        <ul>
+                            <li>完整重現卡通客廳場景</li>
+                            <li>包含經典粉紅色牆面與沙發</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hole 2 -->
+            <div class="bilingual-text">
+                <div class="english-text">
+                    <h3>The Dude’s Adobe</h3>
+                    <p>A tribute hole to the classic film "The Big Lebowski". Set up like "The Dude's" room, you need to putt across the rug and around bowling pins, offering both challenge and fun.</p>
+                </div>
+                <div class="chinese-text">
+                    <h3>The Dude’s Adobe（崩壞夢王國）</h3>
+                    <p>向經典電影《謀殺綠腳趾》（The Big Lebowski）致敬的球洞。場景佈置得像主角 "The Dude" 的房間，您需要將球推過地毯，繞過保齡球瓶，極具挑戰性與趣味。</p>
+                </div>
+            </div>
+
+            <!-- Karaoke -->
+            <div class="bilingual-text">
+                <div class="english-text">
+                    <h3>Private Karaoke Room</h3>
+                    <p>Still buzzing after golf? The private karaoke rooms here can accommodate up to 15 people. Equipped with professional sound systems and disco balls, letting you unleash your inner superstar in a private space.</p>
+                </div>
+                <div class="chinese-text">
+                    <h3>Private Karaoke Room（私人卡拉OK）</h3>
+                    <p>打完高爾夫還意猶未盡？這裡的私人卡拉OK包廂可容納多達 15 人。配備專業音響與迪斯可球，讓您在私密空間內盡情釋放巨星魅力。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Info -->
+        <div class="bilingual-section">
+            <h2>Location & Details | 地點與詳情</h2>
+            <div class="bilingual-text">
+                <div class="english-text">
+                    <ul>
+                        <li><strong>Address:</strong> Circle on Cavill, Surfers Paradise Blvd, Surfers Paradise QLD 4217</li>
+                        <li><strong>Opening Hours:</strong> Open 7 days a week (Late night trading)</li>
+                        <li><strong>Age Restriction:</strong> Family-friendly during the day; 18+ ID required for bar service and certain evening hours.</li>
+                    </ul>
+                </div>
+                <div class="chinese-text">
+                    <ul>
+                        <li><strong>地址：</strong> 昆士蘭州 衝浪者天堂 Circle on Cavill 購物中心</li>
+                        <li><strong>營業時間：</strong> 每週 7 天營業（營業至深夜）</li>
+                        <li><strong>年齡限制：</strong> 白天適合家庭同樂；酒吧服務及特定晚間時段需出示 18+ 證件。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Reference Guide. Unofficial Information based on Holey Moley Surfers Paradise.</p>
+    </div>
+</div>
+
+</body>
+</html>
