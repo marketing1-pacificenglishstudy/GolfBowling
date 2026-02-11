@@ -2,131 +2,145 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Holey Moley Golf Club Surfers Paradise Bilingual Guide">
     <title>Holey Moley Surfers Paradise 雙語介紹</title>
     <style>
+        /* --- 基礎重置與全局變數 --- */
+        :root {
+            --primary-color: #e84545;
+            --secondary-color: #2b2e4a;
+            --accent-color: #ff6b6b;
+            --bg-gradient: linear-gradient(135deg, #FF6B6B 0%, #556270 100%);
+            --card-bg: #ffffff;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
+            --spacing-unit: 1rem;
+            --border-radius-lg: 20px;
+            --border-radius-sm: 10px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent; /* 移除手機點擊高亮 */
         }
 
         body {
-            font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            /* 背景維持原本的活潑配色 */
-            background: linear-gradient(135deg, #FF6B6B 0%, #556270 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-gradient);
             padding: 20px;
+            min-height: 100vh;
         }
 
+        /* --- 主容器：卡片式設計 --- */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
             overflow: hidden;
         }
 
+        /* --- 頁首 --- */
         .header {
-            background: linear-gradient(135deg, #2b2e4a 0%, #e84545 100%);
-            color: white;
-            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--text-light);
+            padding: 4rem 2rem;
             text-align: center;
         }
 
         .header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
+            font-size: clamp(2rem, 5vw, 3.5rem); /* 流體字體：手機2rem -> 桌機3.5rem */
+            margin-bottom: 1rem;
+            line-height: 1.2;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .header .subtitle {
-            font-size: 1.3em;
+            font-size: clamp(1rem, 2vw, 1.3rem);
             opacity: 0.95;
+            font-weight: 300;
         }
 
+        /* --- 內容區域 --- */
         .content {
-            padding: 50px 40px;
+            padding: 3rem 2rem;
         }
 
+        /* --- 雙語區塊 (核心響應式結構) --- */
         .bilingual-section {
-            margin-bottom: 50px;
-            padding: 30px;
+            margin-bottom: 3rem;
+            padding: 2rem;
             background: #f8f9fa;
-            border-radius: 15px;
-            border-left: 5px solid #e84545;
+            border-radius: var(--border-radius-sm);
+            border-left: 5px solid var(--primary-color);
         }
 
         .bilingual-section h2 {
-            color: #e84545;
-            margin-bottom: 20px;
-            font-size: 2em;
-            border-bottom: 2px solid #e84545;
-            padding-bottom: 10px;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            border-bottom: 2px solid rgba(232, 69, 69, 0.2);
+            padding-bottom: 0.5rem;
         }
 
         .bilingual-text {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 20px;
+            grid-template-columns: 1fr 1fr; /* 預設雙欄 */
+            gap: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .english-text {
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            border-left: 4px solid #2b2e4a;
-            color: #333; /* 確保文字為深色 */
+        .english-text, .chinese-text {
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            font-size: 1rem;
+            color: var(--text-dark); /* 確保文字顏色夠深 */
         }
 
-        .chinese-text {
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            border-left: 4px solid #e84545;
-            color: #333; /* 確保文字為深色 */
-        }
+        .english-text { border-left: 4px solid var(--secondary-color); }
+        .chinese-text { border-left: 4px solid var(--primary-color); }
 
-        /* Highlight Box 特別樣式修正 */
+        /* --- 重點強調區塊 (Highlight Box) --- */
         .highlight-box {
-            background: linear-gradient(135deg, #e84545 0%, #2b2e4a 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(232, 69, 69, 0.3);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 2rem;
+            border-radius: var(--border-radius-sm);
+            margin: 2rem 0;
+            color: #fff; /* 標題用白色 */
+            box-shadow: 0 10px 25px rgba(232, 69, 69, 0.25);
         }
 
         .highlight-box h3 {
-            margin-bottom: 15px;
-            font-size: 1.5em;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
             color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
         
-        /* 強制 Highlight Box 內的白色文字區塊文字為黑色，避免融入背景 */
+        /* 強制覆蓋內部文字顏色，確保可讀性 */
         .highlight-box .english-text, 
         .highlight-box .chinese-text {
-            color: #333 !important; 
+            background: rgba(255, 255, 255, 0.95) !important; /* 微微透明白底 */
+            color: var(--text-dark) !important; /* 深黑字體 */
+            border: none !important; /* 移除內邊框 */
         }
 
-        .highlight-box .english-text p, 
-        .highlight-box .chinese-text p,
-        .highlight-box .english-text ul li, 
-        .highlight-box .chinese-text ul li {
-            color: #333 !important;
-        }
-
+        /* --- 列表樣式 --- */
         ul {
             list-style: none;
-            padding-left: 0;
         }
 
         ul li {
-            padding: 10px 0;
-            padding-left: 30px;
+            padding: 0.5rem 0 0.5rem 1.8rem;
             position: relative;
         }
 
@@ -134,58 +148,89 @@
             content: "▸";
             position: absolute;
             left: 0;
-            color: #e84545;
+            color: var(--primary-color);
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.2rem;
+            line-height: 1.6;
         }
 
+        /* --- 頁尾 --- */
         .footer {
-            background: #2b2e4a;
-            color: white;
+            background: var(--secondary-color);
+            color: rgba(255,255,255,0.8);
             text-align: center;
-            padding: 30px;
+            padding: 2rem;
+            font-size: 0.9rem;
         }
 
+        /* =========================================
+           RWD 斷點設定 (Responsive Breakpoints)
+           ========================================= */
+        
+        /* 平板直向與手機 (小於 768px) */
         @media (max-width: 768px) {
+            body { padding: 10px; } /* 減少邊距 */
+            
+            .header { padding: 3rem 1.5rem; }
+            .content { padding: 2rem 1rem; }
+            
+            .bilingual-section {
+                padding: 1.5rem 1rem; /* 減少內距增加可視空間 */
+            }
+
             .bilingual-text {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* 強制單欄堆疊 */
+                gap: 1rem; /* 減少間距 */
             }
-            .header h1 {
-                font-size: 2em;
-            }
-            .content {
-                padding: 30px 20px;
-            }
+
+            /* 手機版視覺優化：中文在上方 (因為目標讀者可能優先看中文) */
+            /* 如果希望英文在上面，請移除下面這兩行 flex 屬性設定，因為 grid 預設順序就是 HTML 順序 */
+            /* 
+            .bilingual-text { display: flex; flex-direction: column; }
+            .chinese-text { order: -1; margin-bottom: 0.5rem; } 
+            */
+        }
+
+        /* 超小螢幕手機 (iPhone SE, Fold折疊屏外螢幕) (小於 380px) */
+        @media (max-width: 380px) {
+            .header h1 { font-size: 1.8rem; }
+            .bilingual-section h2 { font-size: 1.3rem; }
+            ul li { padding-left: 1.5rem; } /* 縮減列表縮排 */
+        }
+        
+        /* 針對暗色模式的初步支援 (Dark Mode Support) */
+        @media (prefers-color-scheme: dark) {
+            /* 這裡預留空間，目前維持白色卡片風格以確保最佳對比度 */
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
+    <header class="header">
         <h1>Holey Moley Golf Club</h1>
         <div class="subtitle">Surfers Paradise 迷你高爾夫與娛樂中心</div>
-    </div>
+    </header>
 
-    <div class="content">
+    <main class="content">
 
         <!-- About Section -->
-        <div class="bilingual-section">
+        <section class="bilingual-section">
             <h2>About Holey Moley | 關於我們</h2>
             <div class="bilingual-text">
                 <div class="english-text">
                     <p>Holey Moley Golf Club is the Gold Coast's craziest and most unique mini golf venue, located in the heart of Surfers Paradise at Circle on Cavill.</p>
-                    <p>More than just a mini golf course, it combines a cocktail bar, karaoke, and pop-culture art installations, turning the traditional putt-putt game into a vibrant nightlife experience.</p>
+                    <p style="margin-top: 10px;">More than just a mini golf course, it combines a cocktail bar, karaoke, and pop-culture art installations, turning the traditional putt-putt game into a vibrant nightlife experience.</p>
                 </div>
                 <div class="chinese-text">
                     <p>Holey Moley Golf Club 是黃金海岸最瘋狂、獨特的迷你高爾夫體驗場所，坐落於衝浪者天堂（Surfers Paradise）的中心地帶 Circle on Cavill。</p>
-                    <p>這不僅僅是一個迷你高爾夫球場，它結合了雞尾酒酒吧、卡拉OK和流行文化藝術裝置，將傳統的推桿遊戲變成了充滿活力的夜生活體驗。</p>
+                    <p style="margin-top: 10px;">這不僅僅是一個迷你高爾夫球場，它結合了雞尾酒酒吧、卡拉OK和流行文化藝術裝置，將傳統的推桿遊戲變成了充滿活力的夜生活體驗。</p>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Why Choose Section -->
-        <div class="bilingual-section">
+        <section class="bilingual-section">
             <h2>Why Choose Holey Moley? | 為什麼選擇這裡？</h2>
             
             <div class="bilingual-text">
@@ -206,10 +251,10 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Must-Try Rides/Holes -->
-        <div class="bilingual-section">
+        <section class="bilingual-section">
             <h2>Must-Try Holes | 必玩球洞與體驗</h2>
 
             <!-- Hole 1 (Highlight Box) -->
@@ -256,10 +301,10 @@
                     <p>打完高爾夫還意猶未盡？這裡的私人卡拉OK包廂可容納多達 15 人。配備專業音響與迪斯可球，讓您在私密空間內盡情釋放巨星魅力。</p>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Location Info -->
-        <div class="bilingual-section">
+        <section class="bilingual-section">
             <h2>Location & Details | 地點與詳情</h2>
             <div class="bilingual-text">
                 <div class="english-text">
@@ -277,13 +322,13 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
 
-    </div>
+    </main>
 
-    <div class="footer">
+    <footer class="footer">
         <p>&copy; 2026 Reference Guide. Unofficial Information based on Holey Moley Surfers Paradise.</p>
-    </div>
+    </footer>
 </div>
 
 </body>
